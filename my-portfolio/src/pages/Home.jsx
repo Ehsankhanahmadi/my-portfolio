@@ -6,24 +6,29 @@ import Skills from "../components/sections/Skills";
 import Experience from "../components/sections/Experience";
 import Contact from "../components/sections/Contact";
 import Footer from "../components/layout/Footer";
+import AnimatedBackground from "../components/ui/AnimatedBackground";
 
 
 
 export default function Home() {
   return (
-    <div id="home" className="min-h-screen bg-background">
-      <Navbar />
+    <div id="home" className="relative min-h-screen bg-background">
+      <AnimatedBackground />
 
-      <main>
-        <Hero />
-        <About />
-        <Projects />
-        <Skills />
-        <Experience />
-        <Contact />
-      </main>
+      <div className="relative z-10">
+        <Navbar />
 
-      <Footer />
+        <main>
+          <Hero />
+          <About />
+          <Projects />
+          <Skills />
+          <Experience />
+          <Contact />
+        </main>
+
+        <Footer />
+      </div>
     </div>
   );
 }

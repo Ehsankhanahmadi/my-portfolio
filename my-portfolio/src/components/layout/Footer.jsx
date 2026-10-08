@@ -13,7 +13,7 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border">
+    <footer className="border-t border-border bg-background/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-300 flex-col gap-5 px-6 py-8 sm:flex-row sm:items-center sm:justify-between lg:px-8">
         <div>
           <p className="font-mono text-sm font-semibold text-foreground">
