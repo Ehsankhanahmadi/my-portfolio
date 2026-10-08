@@ -31,7 +31,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-300 items-center px-6 py-20 lg:px-8"
+      className="mx-auto flex min-h-[calc(100svh-4rem)] max-w-300 items-center px-6 py-16 sm:py-20 lg:px-8"
     >
       <div className="grid w-full items-center gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
         {/* Hero Content */}
@@ -118,7 +118,7 @@ export default function Hero() {
             </div>
 
             {/* Architecture Content */}
-            <div className="p-6 sm:p-8">
+            <div className="p-5 sm:p-8">
               <div className="font-mono text-sm">
                 <div className="text-accent">backend/</div>
 

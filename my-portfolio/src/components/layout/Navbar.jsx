@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import { useTheme } from "../../context/ThemeContext";
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -12,9 +13,35 @@ const navItems = [
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
-  const closeMenu = () => {
+  const handleMobileThemeToggle = () => {
+    toggleTheme();
     setIsMenuOpen(false);
+  };
+
+  const handleNavigation = (href) => {
+    setIsMenuOpen(false);
+
+    const target = document.querySelector(href);
+
+    if (!target) {
+      return;
+    }
+
+    window.history.pushState({}, "", href);
+
+    setTimeout(() => {
+      const offset = window.innerWidth < 768 ? 32 : 80;
+
+      const targetPosition =
+        target.getBoundingClientRect().top + window.scrollY - offset;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth",
+      });
+    }, 350);
   };
 
   return (
@@ -47,15 +74,15 @@ export default function Navbar() {
           {/* Theme Toggle - visual placeholder for now */}
           <button
             type="button"
+            onClick={toggleTheme}
             className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-md border border-border text-muted-foreground transition-colors duration-200 hover:border-accent hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
-            aria-label="Toggle theme"
+            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
           >
-            <span aria-hidden="true" className="text-sm">
-              ◐
+            <span aria-hidden="true" className="font-mono text-sm">
+              {theme === "dark" ? "☼" : "☾"}
             </span>
           </button>
         </div>
-
         {/* Mobile Menu Button */}
         <button
           type="button"
@@ -105,7 +132,10 @@ export default function Navbar() {
                 <a
                   key={item.href}
                   href={item.href}
-                  onClick={closeMenu}
+                  onClick={(event) => {
+                    event.preventDefault();
+                    handleNavigation(item.href);
+                  }}
                   className="border-b border-border/50 py-4 text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
                 >
                   {item.label}
@@ -114,11 +144,15 @@ export default function Navbar() {
 
               <button
                 type="button"
+                onClick={handleMobileThemeToggle}
                 className="mt-4 flex w-full cursor-pointer items-center justify-between rounded-md border border-border px-4 py-3 text-sm font-medium text-muted-foreground transition-colors duration-200 hover:border-accent hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
-                aria-label="Toggle theme"
+                aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
               >
                 <span>Theme</span>
-                <span aria-hidden="true">◐</span>
+
+                <span aria-hidden="true" className="font-mono">
+                  {theme === "dark" ? "☼" : "☾"}
+                </span>
               </button>
             </div>
           </motion.div>

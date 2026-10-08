@@ -6,30 +6,71 @@
   --font-sans: "IBM Plex Sans", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
-  --color-background: #0b0f14;
-  --color-surface: #111821;
-  --color-surface-alt: #151e28;
+  --color-background: var(--theme-background);
+  --color-surface: var(--theme-surface);
+  --color-surface-alt: var(--theme-surface-alt);
 
-  --color-border: #263241;
+  --color-border: var(--theme-border);
 
-  --color-foreground: #f3f4f6;
-  --color-muted-foreground: #9ca3af;
+  --color-foreground: var(--theme-foreground);
+  --color-muted-foreground: var(--theme-muted-foreground);
 
-  --color-accent: #38bdf8;
-  --color-accent-hover: #0ea5e9;
+  --color-accent: var(--theme-accent);
+  --color-accent-hover: var(--theme-accent-hover);
 
-  --color-success: #22c55e;
-  --color-destructive: #ef4444;
+  --color-success: var(--theme-success);
+  --color-destructive: var(--theme-destructive);
 }
 
 :root {
+  --theme-background: #0b0f14;
+  --theme-surface: #111821;
+  --theme-surface-alt: #151e28;
+
+  --theme-border: #263241;
+
+  --theme-foreground: #f3f4f6;
+  --theme-muted-foreground: #9ca3af;
+
+  --theme-accent: #38bdf8;
+  --theme-accent-hover: #0ea5e9;
+
+  --theme-success: #22c55e;
+  --theme-destructive: #ef4444;
+
   font-family: "IBM Plex Sans", sans-serif;
-  color: #f3f4f6;
-  background: #0b0f14;
+  color: var(--theme-foreground);
+  background: var(--theme-background);
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html.light {
+  color-scheme: light;
+    color-scheme: light;
+
+  --theme-background: #f8fafc;
+  --theme-surface: #ffffff;
+  --theme-surface-alt: #f1f5f9;
+
+  --theme-border: #dbe2ea;
+
+  --theme-foreground: #111827;
+  --theme-muted-foreground: #64748b;
+
+  --theme-accent: #0284c7;
+  --theme-accent-hover: #0369a1;
+
+  --theme-success: #16a34a;
+  --theme-destructive: #dc2626;
+}
+
+html.light body {
+  background: var(--color-background);
+  color: var(--color-foreground);
 }
 
 html {
@@ -40,8 +81,9 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: #0b0f14;
-  color: #f3f4f6;
+  overflow-x: hidden;
+  background: var(--theme-background);
+  color: var(--theme-foreground);
 }
 
 button,
