@@ -1,1 +1,55 @@
 @import "tailwindcss";
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap");
+
+@theme {
+  --font-sans: "IBM Plex Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-background: #0b0f14;
+  --color-surface: #111821;
+  --color-surface-alt: #151e28;
+
+  --color-border: #263241;
+
+  --color-foreground: #f3f4f6;
+  --color-muted-foreground: #9ca3af;
+
+  --color-accent: #38bdf8;
+  --color-accent-hover: #0ea5e9;
+
+  --color-success: #22c55e;
+  --color-destructive: #ef4444;
+}
+
+:root {
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #f3f4f6;
+  background: #0b0f14;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #0b0f14;
+  color: #f3f4f6;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: #38bdf8;
+  color: #0b0f14;
+}
