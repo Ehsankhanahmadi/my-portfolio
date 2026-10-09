@@ -8,7 +8,7 @@ This portfolio reflects my personal design preferences and development approach,
 
 **Website:** [Visit My Portfolio](YOUR_DOMAIN_HERE)
 
-> Replace `YOUR_DOMAIN_HERE` with your website's domain once it is published.
+https://ehsankhanahmadi.github.io/my-portfolio/
 
 ## ✨ Features
 
