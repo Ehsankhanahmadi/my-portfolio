@@ -3,47 +3,54 @@ import SectionHeading from "../ui/SectionHeading";
 
 const projects = [
   {
-    title: "Bot Platform",
+    title: "Agent For All Application",
     description:
-      "A multi-tenant platform for building and operating business bots with a centralized backend, runtime management, and scalable infrastructure.",
+      "This project is currently under development and has not yet reached the production stage. It is a multi-platform microservices project designed for business bots, and the project's website will be unveiled soon.",
     stack: [
-      "Python",
       "Django",
       "DRF",
-      "PostgreSQL",
+      "FastAPI",
+      "AI Agent",
+      "Postgresql",
+      "Qdrant",
+      "Httpx",
       "RabbitMQ",
       "Celery",
       "Docker",
+      "React",
+      "React Router",
     ],
-    type: "Backend Platform",
+    type: "Microservice Platform",
     featured: true,
+    href: "#"
   },
   {
-    title: "AI Knowledge Base",
+    title: "KeyForge",
     description:
-      "A knowledge-base architecture that combines document processing, PostgreSQL metadata, vector search, and AI APIs to provide contextual answers.",
+      "There is an open-source package that helps you avoid feeling frustrated when using faulty keyboards and allows you to manage your keyboards effectively.",
     stack: [
       "Python",
-      "PostgreSQL",
-      "Qdrant",
-      "Embeddings",
-      "AI API",
+      "AI",
     ],
-    type: "AI Infrastructure",
-    featured: false,
+    type: "Backend",
+    featured: true,
+    href: "https://github.com/Ehsankhanahmadi/KeyForge"
   },
   {
-    title: "Developer Dashboard",
+    title: "React Admin Dashboard",
     description:
-      "A responsive admin dashboard focused on presenting application data, system metrics, and operational information through a clean developer-oriented interface.",
+      "A versatile dashboard—regardless of the application you are building, every program requires a dashboard system and an administration panel. This open-source project has been designed for you; it is both beautiful and comprehensive.",
     stack: [
+      "Vite",
       "React",
+      "React Router",
       "TypeScript",
-      "Tailwind CSS",
-      "Charts",
+      "Tailwindcss",
+      "Chartjs"
     ],
     type: "Frontend",
     featured: false,
+    href: "https://github.com/Ehsankhanahmadi/react-admin-dashboard"
   },
 ];
 
@@ -51,22 +58,11 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section
-      id="projects"
-      className="mx-auto max-w-300 px-6 py-24 lg:px-8 lg:py-32"
-    >
-      <SectionHeading
-        eyebrow="Selected Work"
-        title="Projects built around real engineering problems."
-      />
-
+    <section id="projects" className="mx-auto max-w-300 px-6 py-24 lg:px-8 lg:py-32">
+      <SectionHeading eyebrow="Selected Work" title="Projects built around real engineering problems."/>
       <div className="mt-12 space-y-5">
         {projects.map((project, index) => (
-          <motion.article
-            key={project.title}
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
+          <motion.article key={project.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }}
             transition={{
               duration: 0.5,
               delay: index * 0.08,
@@ -82,33 +78,29 @@ export default function Projects() {
                   <span className="font-mono text-xs uppercase tracking-wider text-accent">
                     {project.type}
                   </span>
-
                   {project.featured && (
                     <span className="rounded-full border border-border px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
                       Featured
                     </span>
                   )}
                 </div>
-
                 <h3 className="mt-4 font-mono text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
                   {project.title}
                 </h3>
-
                 <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-foreground sm:text-base">
                   {project.description}
                 </p>
               </div>
-
               <div className="flex shrink-0 items-center gap-2">
                 <a
-                  href="#"
+                  href={project.href}
+                  target={project.href === "#" ? undefined : "_blank"}
                   className="inline-flex h-10 items-center justify-center rounded-md border border-border px-4 text-sm font-medium text-foreground transition-colors duration-200 hover:border-accent hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
                 >
                   View Project
                 </a>
               </div>
             </div>
-
             <div className="mt-8 flex flex-wrap gap-2 border-t border-border pt-6">
               {project.stack.map((technology) => (
                 <span

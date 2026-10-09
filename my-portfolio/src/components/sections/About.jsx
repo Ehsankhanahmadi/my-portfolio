@@ -29,31 +29,13 @@ export default function About() {
       className="mx-auto max-w-300 px-6 py-24 lg:px-8 lg:py-32"
     >
       <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
-        {/* ستون چپ: تیتر بالا، توضیحات پایین */}
         <div className="min-w-0">
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-          >
-            <SectionHeading
-              eyebrow="Engineering Focus"
-              title="Building systems that are meant to last."
-            />
+          <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.5, ease: "easeOut" }}>
+            <SectionHeading eyebrow="Engineering Focus" title="Building systems that are meant to last."/>
           </motion.div>
-
-          {/* پنل مشترک: فقط متن توضیحات */}
           <div>
-            
           </div>
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="max-w-2xl space-y-5 text-base leading-8 text-muted-foreground sm:text-lg"
-          >
+          <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.5, ease: "easeOut" }} className="max-w-2xl space-y-5 text-base leading-8 text-muted-foreground sm:text-lg">
             <div className="mt-8 max-w-xl text-base leading-8 text-muted-foreground sm:text-lg">
               <p>
                 I focus on building backend systems, APIs, and developer tools
@@ -69,15 +51,7 @@ export default function About() {
             </div>
           </motion.div>
         </div>
-
-        {/* ستون راست: لیست در کنار کل ستون چپ */}
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5, delay: 0.08, ease: "easeOut" }}
-          className="min-w-0 rounded-xl border border-border bg-surface p-6 transition-colors duration-200 hover:border-accent/60 sm:p-8"
-        >
+        <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.5, delay: 0.08, ease: "easeOut" }} className="min-w-0 rounded-xl border border-border bg-surface p-6 transition-colors duration-200 hover:border-accent/60 sm:p-8">
           {focusItems.map((item, index) => (
             <div
               key={item.label}
@@ -90,7 +64,6 @@ export default function About() {
               <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
                 {item.label}
               </span>
-
               <span className="text-sm font-medium text-foreground sm:text-right">
                 {item.value}
               </span>

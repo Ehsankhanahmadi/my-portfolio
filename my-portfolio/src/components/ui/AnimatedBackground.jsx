@@ -27,11 +27,8 @@ const circuits = [
 
 export default function AnimatedBackground() {
   return (
-    <div
-      className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
-      aria-hidden="true"
-    >
-      {/* Engineering grid */}
+    <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden" aria-hidden="true">
+      {/* grid */}
       <div
         className="absolute inset-0 opacity-[0.04]"
         style={{
@@ -43,50 +40,16 @@ export default function AnimatedBackground() {
         }}
       />
 
-      {/* Circuit network */}
-      <svg
-        className="absolute inset-0 h-full w-full opacity-[0.15]"
-        viewBox="0 0 800 700"
-        preserveAspectRatio="none"
-      >
+      {/* Circuit */}
+      <svg className="absolute inset-0 h-full w-full opacity-[0.15]" viewBox="0 0 800 700" preserveAspectRatio="none">
         {circuits.map((circuit, index) => (
           <g key={index}>
-            <path
-              d={circuit.path}
-              fill="none"
-              stroke="var(--theme-accent)"
-              strokeWidth="1"
-              vectorEffect="non-scaling-stroke"
-            />
-
-            <motion.path
-              d={circuit.pulse}
-              fill="none"
-              stroke="var(--theme-accent)"
-              strokeWidth="3"
-              strokeLinecap="round"
-              strokeDasharray="10 100"
-              vectorEffect="non-scaling-stroke"
-              initial={{ strokeDashoffset: 0, opacity: 0 }}
-              animate={{
-                strokeDashoffset: -110,
-                opacity: [1, 1, 1],
-              }}
-              transition={{
-                duration: 4,
-                delay: index * 1.2,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-            />
-
-            <circle
-              cx={circuit.node[0]}
-              cy={circuit.node[1]}
-              r="3"
-              fill="var(--theme-accent)"
-              opacity="1"
-            />
+            <path d={circuit.path} fill="none" stroke="var(--theme-accent)" strokeWidth="1" vectorEffect="non-scaling-stroke"/>
+            <motion.path d={circuit.pulse} fill="none" stroke="var(--theme-accent)" strokeWidth="3" strokeLinecap="round" strokeDasharray="10 100" vectorEffect="non-scaling-stroke" 
+            initial={{ strokeDashoffset: 0, opacity: 0 }} 
+            animate={{strokeDashoffset: -110,opacity: [1, 1, 1],}} 
+            transition={{duration: 4,delay: index * 1.2,repeat: Infinity,ease: "linear",}}/>
+            <circle cx={circuit.node[0]} cy={circuit.node[1]} r="3" fill="var(--theme-accent)" opacity="1"/>
           </g>
         ))}
       </svg>

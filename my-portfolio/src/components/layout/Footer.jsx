@@ -5,7 +5,7 @@ const footerLinks = [
   },
   {
     label: "Email",
-    href: "mailto:your-email@example.com",
+    href: "mailto:ehsankhanahmadi.web@gmail.com",
   },
 ];
 
@@ -21,7 +21,7 @@ export default function Footer() {
           </p>
 
           <p className="mt-1 text-xs text-muted-foreground">
-            Backend-focused developer.
+            FullStack developer.
           </p>
         </div>
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useTheme } from "../../context/ThemeContext";
+import { useTheme } from "../../context/theme-context";
 
 const commands = [
   {
@@ -64,11 +64,8 @@ export default function TerminalAnimation() {
 
   
 return (
-    <div
-      aria-hidden="true"
-      className="pointer-events-none absolute m-5 top-[8%] z-0 hidden h-[65%] w-[90%] overflow-visible lg:block"
-    >
-      {/* Green ambient glow */}      
+    <div aria-hidden="true" className="pointer-events-none absolute m-5 top-[8%] z-0 hidden h-[65%] w-[90%] overflow-visible lg:block">
+      {/* ambient glow */}      
       <div
         aria-hidden="true"
         className={`pointer-events-none absolute left-1/2 top-1/2 h-[140%] w-[125%] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[70px] sm:blur-[100px] ${

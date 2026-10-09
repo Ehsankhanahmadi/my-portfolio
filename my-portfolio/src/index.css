@@ -1,6 +1,6 @@
-@import "tailwindcss";
-
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap");
+
+@import "tailwindcss";
 
 @theme {
   --font-sans: "IBM Plex Sans", sans-serif;
@@ -50,7 +50,6 @@
 
 html.light {
   color-scheme: light;
-    color-scheme: light;
 
   --theme-background: #f8fafc;
   --theme-surface: #ffffff;
@@ -179,14 +178,4 @@ html.light .terminal-cursor {
     rgb(22 95 163 / 5%) 58%,
     transparent 75%
   );
-}
-
-/* Completely disable the glow in light theme */
-html.light .terminal-glow-green .terminal-glow-blue,
-body.light .terminal-glow-green .terminal-glow-blue,
-.light .terminal-glow-green .terminal-glow-blue {
-  background: none !important;
-  opacity: 0 !important;
-  box-shadow: none !important;
-  filter: none !important;
 }
