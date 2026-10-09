@@ -57,7 +57,7 @@ export default function Contact() {
             delay: 0.08,
             ease: "easeOut",
           }}
-          className="border-y border-border"
+          className="min-w-0 rounded-xl border border-border bg-surface p-6 transition-colors duration-200 hover:border-accent/60 sm:p-8"
         >
           {contactLinks.map((link, index) => (
             <a

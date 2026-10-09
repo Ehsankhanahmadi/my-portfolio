@@ -23,24 +23,6 @@ const circuits = [
   },
 ];
 
-const floatingElements = [
-  {
-    label: "< />",
-    className: "left-[8%] top-[28%]",
-    delay: 0,
-  },
-  {
-    label: "{ }",
-    className: "right-[10%] top-[38%]",
-    delay: 1.2,
-  },
-  {
-    label: "01",
-    className: "left-[18%] bottom-[20%]",
-    delay: 2.2,
-  },
-];
-
 
 
 export default function AnimatedBackground() {
@@ -81,14 +63,14 @@ export default function AnimatedBackground() {
               d={circuit.pulse}
               fill="none"
               stroke="var(--theme-accent)"
-              strokeWidth="2"
+              strokeWidth="3"
               strokeLinecap="round"
               strokeDasharray="10 100"
               vectorEffect="non-scaling-stroke"
               initial={{ strokeDashoffset: 0, opacity: 0 }}
               animate={{
                 strokeDashoffset: -110,
-                opacity: [0, 1, 0],
+                opacity: [1, 1, 1],
               }}
               transition={{
                 duration: 4,
@@ -103,32 +85,11 @@ export default function AnimatedBackground() {
               cy={circuit.node[1]}
               r="3"
               fill="var(--theme-accent)"
-              opacity="0.8"
+              opacity="1"
             />
           </g>
         ))}
       </svg>
-
-      {/* Floating engineering elements */}
-      {floatingElements.map((element) => (
-        <motion.span
-          key={element.label}
-          className={`absolute ${element.className} font-mono text-xs text-accent/20`}
-          initial={{ opacity: 0, y: 0 }}
-          animate={{
-            opacity: [0.2, 0.4, 0.2],
-            y: [0, -10, 0],
-          }}
-          transition={{
-            duration: 6,
-            delay: element.delay,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
-          {element.label}
-        </motion.span>
-      ))}
     </div>
   );
 }

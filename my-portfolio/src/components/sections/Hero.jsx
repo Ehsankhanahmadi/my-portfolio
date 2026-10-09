@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import Button from "../ui/Button";
-import StatusIndicator from "../ui/StatusIndicator";
+// import StatusIndicator from "../ui/StatusIndicator";
+import TerminalAnimation from "../ui/TerminalAnimation";
 
 const architectureItems = [
   {
@@ -31,16 +32,17 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="mx-auto flex min-h-[calc(100svh-4rem)] max-w-300 items-center px-6 py-16 sm:py-20 lg:px-8"
+      className="relative isolate mx-auto flex min-h-[calc(100svh-4rem)] max-w-300 items-center overflow-visible px-6 py-16 sm:py-20 lg:px-8"
     >
-      <div className="grid w-full items-center gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+      <TerminalAnimation />
+      <div className="relative z-10 grid w-full items-center gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
         {/* Hero Content */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
-          <StatusIndicator />
+          {/* <StatusIndicator /> */}
 
           <motion.h1
             initial={{ opacity: 0, y: 12 }}
