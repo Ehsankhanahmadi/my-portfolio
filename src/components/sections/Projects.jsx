@@ -19,6 +19,8 @@ const projects = [
       "Docker",
       "React",
       "React Router",
+      "Grafana",
+      "Prometheus"
     ],
     type: "Microservice Platform",
     featured: true,
