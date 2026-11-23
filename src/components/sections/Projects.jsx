@@ -24,7 +24,7 @@ const projects = [
     ],
     type: "Microservice Platform",
     featured: true,
-    href: "#"
+    href: "https://github.com/Ehsankhanahmadi/Bot-Platform"
   },
   {
     title: "KeyForge",
