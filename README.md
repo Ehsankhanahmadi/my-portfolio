@@ -109,9 +109,10 @@ my-portfolio/
 
 For professional inquiries, collaboration opportunities, or questions about my work, please visit my portfolio and use the contact information provided there.
 
-## 📄 License
+## License
 
-This project is distributed under the license included in this repository. Please refer to the `LICENSE` file for the applicable terms.
+This project is licensed under the MIT License.
+See the [LICENSE](LICENSE) file for details.
 
 ---
 
